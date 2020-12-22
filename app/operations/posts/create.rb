@@ -11,7 +11,8 @@ module Posts
       data = Schema.call(params)
       return Failure(data) if data.failure?
 
-      post = Post.create(params)
+      # post = Post.create(params)
+      PostsRepository.new.create(params)
 
       Success(post)
     end

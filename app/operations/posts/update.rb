@@ -14,8 +14,7 @@ module Posts
       data = Schema.call(params)
       return Failure(data) if data.failure?
 
-      post = Post.find(params[:id])
-      post.update(params[:params_for_update])
+      post = PostsRepository.new.update(params[:id], params[:params_for_update])
 
       Success(post)
     end
