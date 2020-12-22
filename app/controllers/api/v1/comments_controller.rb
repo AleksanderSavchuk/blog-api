@@ -2,7 +2,7 @@ module Api
   module V1
     class CommentsController < ApplicationController
       schema(:create) do
-        required(:commenter).value(:string) 
+        required(:commenter).value(:string)
         required(:body).value(:string)
         required(:post_id).value(:integer)
       end

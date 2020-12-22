@@ -1,5 +1,5 @@
 module Posts
-  class Create 
+  class Create
     include Dry::Monads[:result]
 
     Schema = Dry::Schema.Params {

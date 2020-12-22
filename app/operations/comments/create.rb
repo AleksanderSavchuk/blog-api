@@ -1,6 +1,6 @@
 module Comments
   class Create
-    include Dry::Monads[:result] 
+    include Dry::Monads[:result]
 
     Schema = Dry::Schema.Params {
       required(:commenter).filled(:string)

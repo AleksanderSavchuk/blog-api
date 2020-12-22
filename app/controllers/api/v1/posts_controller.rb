@@ -2,7 +2,7 @@ module Api
   module V1
     class PostsController < ApplicationController
       schema(:create, :update) do
-        required(:title).value(:string) 
+        required(:title).value(:string)
         required(:text).value(:string)
       end
 
@@ -26,7 +26,7 @@ module Api
       end
 
       def update
-        result = resolve('posts.update').call(params[:id], safe_params.to_h)
+        result = resolve('posts.update').call(id: params[:id], params_for_update: safe_params.to_h)
         if result.success?
           render json: { post: result.success }
         else
